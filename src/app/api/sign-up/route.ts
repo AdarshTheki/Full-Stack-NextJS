@@ -62,22 +62,22 @@ export async function POST(request: Request) {
             await newUser.save();
         }
 
-        // Send verification email
-        const emailResponse = await sendVerificationEmail(email, username, verifyCode);
-        if (!emailResponse.success) {
-            return Response.json(
-                {
-                    success: false,
-                    message: emailResponse.message,
-                },
-                { status: 500 }
-            );
-        }
+        // FIXME: Send verification email error
+        // const emailResponse = await sendVerificationEmail(email, username, verifyCode);
+        // if (!emailResponse.success) {
+        //     return Response.json(
+        //         {
+        //             success: false,
+        //             message: emailResponse.message,
+        //         },
+        //         { status: 500 }
+        //     );
+        // }
 
         return Response.json(
             {
                 success: true,
-                message: 'User registered successfully. Please verify your account.',
+                message: `Registered success, Your verification code is ${verifyCode}`,
             },
             { status: 201 }
         );
