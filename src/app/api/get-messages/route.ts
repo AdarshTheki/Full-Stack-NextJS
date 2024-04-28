@@ -32,8 +32,11 @@ export async function GET(request: Request) {
                 status: 200,
             }
         );
-    } catch (error) {
-        console.error('An unexpected error occurred:', error);
-        return Response.json({ message: 'Internal server error', success: false }, { status: 500 });
+    } catch (error: any) {
+        console.error('An unexpected error occurred:', error?.message);
+        return Response.json(
+            { message: error?.message || 'Internal server error', success: false },
+            { status: 500 }
+        );
     }
 }

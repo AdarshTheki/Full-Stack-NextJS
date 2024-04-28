@@ -23,15 +23,15 @@ export async function POST(req: Request) {
         const stream = OpenAIStream(response);
 
         return new StreamingTextResponse(stream);
-    } catch (error) {
+    } catch (error: any) {
         if (error instanceof OpenAI.APIError) {
             // OpenAI API error handling
             const { name, status, headers, message } = error;
             return NextResponse.json({ name, status, headers, message }, { status });
         } else {
             // General error handling
-            console.error('An unexpected error occurred:', error);
-            throw error;
+            console.error('An unexpected error occurred:', error?.message);
+            throw error?.message;
         }
     }
 }
