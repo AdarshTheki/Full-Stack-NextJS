@@ -11,7 +11,10 @@ export async function POST(request: Request) {
         const user = await UserModel.findOne({ username: decodedUsername });
 
         if (!user) {
-            return Response.json({ success: false, message: 'User not found' }, { status: 404 });
+            return Response.json(
+                { success: false, message: 'verify-code :: User not exists' },
+                { status: 404 }
+            );
         }
 
         // Check if the code is correct and not expired
@@ -24,7 +27,7 @@ export async function POST(request: Request) {
             await user.save();
 
             return Response.json(
-                { success: true, message: 'Account verified successfully' },
+                { success: true, message: 'verify-code :: verified success' },
                 { status: 200 }
             );
         } else if (!isCodeNotExpired) {
@@ -44,8 +47,11 @@ export async function POST(request: Request) {
                 { status: 400 }
             );
         }
-    } catch (error) {
-        console.error('Error verifying user:', error);
-        return Response.json({ success: false, message: 'Error verifying user' }, { status: 500 });
+    } catch (error: any) {
+        console.error('Error verifying user:', error?.message);
+        return Response.json(
+            { success: false, message: error?.message || 'Error verifying user' },
+            { status: 500 }
+        );
     }
 }
