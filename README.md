@@ -1,47 +1,61 @@
-# full-stack-nextjs  Project
+## Anonymous Message
 
-This is a Next.js project with the following features:
+Anonymous Message is a web application built with Next.js that allows users to send and receive anonymous messages.
 
-## Features
+### Features
 
-1. **API Routes:**
-   - An API route file has been created to handle server-side API requests.
+-   Send and receive anonymous messages
+-   User authentication and authorization using NextAuth
+-   AI-powered features (powered by OpenAI)
+-   Secure password hashing using Bcrypt
+-   Email sending functionality using React Email
+-   Form validation using React Hook Form
+-   Resend functionality for messages
+-   TypeScript support using Zod and use-hook-ts
 
-2. **Pages:**
-   - `pages.tsx` contains the main pages of the application.
+### Technologies Used
 
-3. **Authentication (Auth):**
-   - Authentication is implemented for sign-in, sign-up, and verification.
-   - User authentication is handled using a custom authentication system.
+-   Next.js
+-   AI (OpenAI)
+-   OpenAI
+-   Axios
+-   Bcrypt
+-   Mongoose
+-   NextAuth
+-   React Email
+-   React Hook Form
+-   Resend
+-   Zod
+-   use-hook-ts
 
-4. **App Layout:**
-   - The `app` layout is used in `page.tsx` and `dashboard.tsx` to provide a consistent UI for authenticated users.
+### Getting Started
 
-5. **Technologies Used:**
-   - Shadcn/UI components are used for styling and UI elements.
-   - @react-email components are used for email templates.
-   - MongoDB is used as the database.
-   - OpenAI or AI is used to display custom messages.
+1. Clone the repository: `git clone https://github.com/AdarshTheki/secret-messenger-nextjs.git`
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Open the app in your browser: `http://localhost:3000`
 
-6. **Resend Email Service:**
-   - A resend email service is implemented using OpenAI or AI to send custom email messages.
+### Set Environment variable:
 
-## Getting Started
+```bash
+MONGODB_URI=
+NEXTAUTH_SECRET=
+RESEND_API_KEY=
+OPENAI_API_KEY=
+```
 
-1. Clone this repository.
-2. Install dependencies using `npm install`.
-3. Configure MongoDB connection in `.env` file.
-4. Run the development server using `npm run dev`.
+### Contributing
 
-## Usage
+Contributions are welcome! Please open a pull request with your changes.
 
-- Create your pages in the `pages` directory.
-- Implement authentication logic in the `auth` folder.
-- Use Shadcn/UI components for styling.
-- Utilize @react-email components for email templates.
-- Connect to MongoDB for data storage.
-- Implement custom messages using OpenAI or AI.
+### License
 
-## License
+This project is licensed under the [MIT License]().
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Acknowledgments
+
+-   Next.js for their amazing framework
+-   OpenAI for their AI-powered services
+-   All dependencies used in this project
+
+**Note:** Replace `your-username` with your actual GitHub username. Also, update the content to fit your specific needs and the purpose of your repository.
